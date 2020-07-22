@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center">
+        <form method="get" class="mt-20">
+            {% load crispy_forms_tags %}
+            {{ search_form }}
+            <input type="submit" class="btn btn-sm btn-primary" value="Search">
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        {% include 'main/snippets/cities_table.html' %}
+    </div>
+    {% if error %}
+    <div class="col-12">
+        <div class="tab-pane active" id="forecast-list">
+            <div id="forecast_list_ul"><div class="alert alert-warning" role="alert"><a class="close" data-dismiss="alert" href="#">×</a>{{ error }}</div></div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

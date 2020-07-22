@@ -1,0 +1,24 @@
+<div class="tab-pane active" id="forecast-list">
+    <div id="forecast_list_ul">
+        <table class="table">
+            <tbody>
+            {% for city in cities %}
+            <tr>
+                <td>
+                    <img src="http://openweathermap.org/img/wn/{{ city.icon }}@2x.png" width="50" height="50">
+                </td>
+                <td>
+                    <b><a href="#">{{ city }}</a></b>
+                    <img src="http://openweathermap.org/images/flags/{{ city.country|lower }}.png">
+                    <b><i>{{ city.weather_description }}</i></b>
+                    <p><span class="badge badge-info bg-black">{{ city.temperature|floatformat:1 }}°С </span> temperature from {{ city.temperature_from|floatformat:1 }} to {{ city.temperature_to|floatformat:1 }} °С, wind {{ city.wind }} m/s. clouds {{ city.clouds }}%, {{ city.pressure }} hpa</p>
+                    <p>Geo coords
+                        <a href="https://openweathermap.org/weathermap?zoom=12&amp;lat={{ city.lat|floatformat:4 }}&amp;lon={{ city.lat|floatformat:4 }}">[{{ city.lat|floatformat:4 }}, {{ city.lat|floatformat:4 }}]</a>
+                    </p>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

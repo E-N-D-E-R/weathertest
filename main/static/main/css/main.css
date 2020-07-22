@@ -1,0 +1,19 @@
+.mt-20 {
+    margin-top: 20px;
+}
+
+
+#ui-datepicker-div {
+    z-index: 999999;
+    background: white;
+
+
+    border-radius: 7px;
+
+    padding: 13px;
+}
+
+.datepicker {
+    position: relative;
+}
+
